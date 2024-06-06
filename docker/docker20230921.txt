@@ -1,0 +1,71 @@
+docker run --name filebrowser  -v /home/xzz/docker/filebrowser/allFiles:/srv  -v /home/xzz/docker/filebrowser/db/:/filebrowser.db  -v /home/xzz/docker/filebrowser/config/:/settings.json  -v /home/xzz/docker/filebrowser/branding:/branding
+-p 2023:80 filebrowser/filebrowser
+
+
+docker run --name myfile  -v /home/xzz/docker/filebrowser/allFiles:/srv -v /home/xzz/docker/filebrowser/config/settings.json:/settings.json  -v /home/xzz/docker/filebrowser/branding:/branding -v /home/xzz/docker/filebrowser/db/filebrowser.db:/filebrowser.db -p 2023:80 filebrowser/filebrowser
+
+filebrowser config set --branding.name "xzz的云盘"
+
+docker run --name myfilebb  -p 2029:80 filebrowser/filebrowser
+
+
+docker run --name myfile  -v /home/xzz/docker/filebrowser/allFiles:/srv -v /home/xzz/docker/filebrowser/config:/.filebrowser.json  -v /home/xzz/docker/filebrowser/branding:/branding -v /home/xzz/docker/filebrowser/db:/filebrowser.db -p 2023:80 filebrowser/filebrowser
+
+
+
+
+
+docker run --name myfile  -v /home/xzz/docker/filebrowser/allFiles:/srv -v /home/xzz/docker/filebrowser/config/.filebrowser.json:/.filebrowser.json  -v /home/xzz/docker/filebrowser/branding:/branding -v /home/xzz/docker/filebrowser/db/database.db:/database.db -p 2023:80 filebrowser/filebrowser
+
+
+
+docker run -p 666:80 --name jkm  -v /home/xzz/docker/jkm/html:/usr/share/nginx/html  -v /home/xzz/docker/jkm/conf:/etc/nginx/conf.d   -d nginx
+
+docker run -p 2222:80 -p 222:443 --name blog2  -v /home/xzz/docker/blog2/html:/usr/share/nginx/html  -v /home/xzz/docker/blog2/conf:/etc/nginx/conf.d -v /home/xzz/docker/blog2/https:/etc/nginx/https  -d nginx
+
+
+root密码 6294488b
+
+
+docker run -dit -v /home/xzz/docker/ql/config:/ql/config -v /home/xzz/docker/ql/log:/ql/log  -v /home/xzz/docker/ql/db:/ql/db -v /home/xzz/docker/ql/repo:/ql/repo -v /home/xzz/docker/ql/raw:/ql/raw -v /home/xzz/docker/ql/scripts:/ql/scripts -v /home/xzz/docker/ql/jbot:/ql/jbot -p 5700:5700 --name qinglong --hostname qinglong  --restart unless-stopped whyour/qinglong
+
+
+
+
+docker run -p 99:80 --name fullstackbk -v /home/xzz/docker/fullstack/bk/html:/usr/share/nginx/html  -v /home/xzz/docker/fullstack/bk/conf:/etc/nginx/conf.d   -d nginx
+
+docker run -p 98:80 --name fullstackweb -v /home/xzz/docker/fullstack/web/html:/usr/share/nginx/html  -v /home/xzz/docker/fullstack/web/conf:/etc/nginx/conf.d  -d nginx
+
+
+workbench远程管理
+docker run -p 3306:3306 -e MYSQL_ROOT_PASSWORD=zzzxxxccc --name xzzsql -v /home/xzz/docker/mysql/data:/var/lib/mysql -d mysql
+
+进入容器配置
+# 进入 mysql 容器直接访问 mysql 服务
+docker exec -it mysql /bin/sh
+ 
+# 连接到mysql
+mysql -uroot -p
+
+
+
+ DOC_SID=c2581be199d84bbf931cdb616adf2fa837959f87102f463b8d567eec797a823c;ES2=75c72977448f1144;RK=SWkUEcQnep;SID=c2581be199d84bbf931cdb616adf2fa837959f87102f463b8d567eec797a823c;TOK=56957e8054d8d58f;_ga=GA1.2.1256633582.1707030634;_gcl_au=1.1.907805715.1707030638;access_token=78_6576LsjdcaMmvatU4BvtAEa-u8Gi6WFSFWwkvjNFlJ0RwbcTRHG1vMcdVOIcNh1gWx7kbHrWDIH6w2MyMxbO3AY8CgxacEbYpI13owot4TI |
+| clean_env                 | 0                                                            |
+| env_id                    | gray-pct50                                                   |
+| fingerprint               | 3955a31042b642519ebf1ef84e4e506f5                            |
+| gray_user                 | true                                                         |
+| hashkey                   | 56957e80                                                     |
+| loginTime                 | 1709208604983                                                |
+| low_login_enable          | 1                                                            |
+| openid                    | o2MwI043vZai2Oi7uL-t5t3lWzfM                                 |
+| optimal_cdn_domain        | docs.qq.com                                                  |
+| pgv_pvid                  | 1234643960                                                   |
+| ptcz                      | d5163fce52f40ba285dd447dbf4c268c4b3a9cdff9749a332249571b17cab37a |
+| ptui_loginuin             | 185964590                                                    |
+| refresh_token             | 78_lOJ7dF9w_ahbcvISqgTbdOJHW-1fmq02z4bkKzNk_T7FRlxMdZoVnIrgkHj1D9LBT1UZLLZE2LwFuZYkfZeAfFhBknhr83MQZ3KjizKacJ0 |
+| sensorsdata2015jssdkcross | %7B%22distinct_id%22%3A%22100022345834%22%2C%22first_id%22%3A%2218d72f45616131e-030fdf696b86eb-26001851-1600000-18d72f456178bb%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E8%87%AA%E7%84%B6%E6%90%9C%E7%B4%A2%E6%B5%81%E9%87%8F%22%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMThkNzJmNDU2MTYxMzFlLTAzMGZkZjY5NmI4NmViLTI2MDAxODUxLTE2MDAwMDAtMThkNzJmNDU2MTc4YmIiLCIkaWRlbnRpdHlfbG9naW5faWQiOiIxMDAwMjIzNDU4MzQifQ%3D%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%24identity_login_id%22%2C%22value%22%3A%22100022345834%22%7D%2C%22%24device_id%22%3A%2218d72f45616131e-030fdf696b86eb-26001851-1600000-18d72f456178bb%22%7D |
+| traceid                   | 56957e8054                                                   |
+| uid                       | 144115262690859536                                           |
+| uid_key                   | EOP1mMQHGixEM1hFMlJ6SCs4Q3M2TmVBUXRwT0M1RGVsMDA5MkVUa08vcXhqRGJ4RTlnPSJIHGD%2BHiL%2FTxZ%2Fn7apT1ZErnhBf115HGgc39Gci0P1P3NMFbAmXLiyOOThSb0ZxYISn8gZeb15gIpyZIglFX0i%2FUNvzFxl8KoLKJqCoLAG |
+| utype                     | wx                                                           |
+| wx_appid                  | wx46dfe750eef96da7                                           |
