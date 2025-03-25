@@ -119,7 +119,7 @@ git reset --hard HEAD~1
 gitk
 ```
 
-###### 修改 commit
+#####  修改 commit
 
 ```bash
 # 替换提交的信息
@@ -131,3 +131,30 @@ git commit --amend
 # HEAD~3 表示最近的3次提交 pick edit
 git rebase -i HEAD~n
 ```
+
+### 代码管理
+
+1. merge合并远程分支代码, `git fetch origin dev` 拉取远程代码到本地; `git merge origin/dev`进行合并
+
+   ```bash
+   # 查询当前远程的版本
+    git remote -v
+   # 查看分支的跟踪状态
+    git branch -v
+   # 创建本地分支并跟踪远程分支
+   git checkout -b <本地分支名> <远程仓库名>/<远程分支名>
+   # 将现有本地分支与远程分支关联
+   git branch --set-upstream-to=<远程仓库名>/<远程分支名> <本地分支名>
+   # 获取最新代码到本地(本地当前分支为[branch]，获取的远端的分支为[origin/branch])
+    git fetch origin master  [示例1：获取远端的origin/master分支]
+    git fetch origin dev [示例2：获取远端的origin/dev分支]
+   # 查看版本差异
+    git log -p master..origin/master [示例1：查看本地master与远端origin/master的版本差异]
+    git log -p dev..origin/dev   [示例2：查看本地dev与远端origin/dev的版本差异]
+   # 合并最新代码到本地分支
+    git merge origin/master  [示例1：合并远端分支origin/master到当前分支]
+    git merge origin/dev [示例2：合并远端分支origin/dev到当前分支]
+   ```
+
+2. 已被git追踪的目录.gitignore添加忽略会无效, 需要执行`git rm -r --cached 目录名`
+

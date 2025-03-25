@@ -1,4 +1,4 @@
-### setState执行机制
+### setState 执行机制
 
 思考: setState 到底是异步还是同步? 答案: 都是!
 
@@ -78,3 +78,5 @@ componentDidMount() {
   // 这是因为此时 setState 不是在 React 的生命周期方法或合成事件中调用的，
   // 而是处于原生事件中。
 ```
+
+tips: 合成事件处理器: react 中 onClick 绑定的事件不是 dom 原生的,而是经过对原生点击事件加工合成的
