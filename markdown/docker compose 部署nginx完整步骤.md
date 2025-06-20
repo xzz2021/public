@@ -25,8 +25,8 @@
 
    ```bash
    docker compose up -d # 部署服务
-   docker cp nginx:/etc/nginx/conf.d ./nginx/conf.d
-   docker cp nginx:/etc/nginx/nginx.conf ./nginx/nginx.conf
+   docker cp nginx:/etc/nginx/conf.d ./conf.d
+   docker cp nginx:/etc/nginx/nginx.conf ./nginx.conf
    ```
 
 3. 停止容器或删除容器, 重启或重新执行部署
